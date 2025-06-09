@@ -5,3 +5,271 @@
 body{
     background-color: #e9ecf4;
 }
+
+@keyframes mover {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+🎬 2. animation-name
+Especifica el nombre de la animación (debe coincidir con el @keyframes).
+
+css
+Copiar
+Editar
+animation-name: mover;
+⏱️ 3. animation-duration
+Duración de la animación.
+
+css
+Copiar
+Editar
+animation-duration: 2s;
+🔁 4. animation-iteration-count
+Cantidad de veces que se repite la animación.
+
+css
+Copiar
+Editar
+animation-iteration-count: infinite; /* o 1, 2, 3... */
+↔️ 5. animation-direction
+Dirección del ciclo de animación.
+
+css
+Copiar
+Editar
+animation-direction: normal;      /* va hacia adelante */
+animation-direction: reverse;     /* va hacia atrás */
+animation-direction: alternate;   /* va y vuelve */
+⏳ 6. animation-delay
+Espera antes de iniciar la animación.
+
+css
+Copiar
+Editar
+animation-delay: 1s;
+🧮 7. animation-timing-function
+Controla la aceleración/desaceleración.
+
+css
+Copiar
+Editar
+animation-timing-function: ease;      /* predeterminado */
+animation-timing-function: linear;    /* constante */
+animation-timing-function: ease-in;
+animation-timing-function: ease-out;
+animation-timing-function: ease-in-out;
+⛔ 8. animation-fill-mode
+Determina el estilo final de la animación.
+
+css
+Copiar
+Editar
+animation-fill-mode: forwards;   /* mantiene el último estado */
+animation-fill-mode: backwards;  /* aplica el estado inicial antes de comenzar */
+animation-fill-mode: both;       /* aplica ambos */
+🧩 9. animation (shorthand)
+Permite escribir todo en una línea.
+
+css
+Copiar
+Editar
+animation: mover 2s ease-in-out 1s infinite alternate;
+✅ Ejemplo completo:
+html
+Copiar
+Editar
+<style>
+  div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    animation: mover 3s ease-in-out 0s infinite alternate;
+  }
+
+  @keyframes mover {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(200px); }
+  }
+</style>
+
+<div></div>
+¿Te gustaría que te genere una página web con animaciones para que veas cómo se usa todo esto en práctica?
+
+
+
+
+
+
+
+
+Dijiste:
+muestrame muchas
+
+
+ChatGPT dijo:
+¡R! Aquí tienes una lista extensa de propiedades y técnicas CSS relacionadas con animaciones y transiciones, divididas en categorías para que las explores y combines:
+
+🔹 TRANSICIONES (transition)
+Permiten animar cambios de estado (hover, focus, etc.).
+
+Propiedades clave:
+transition-property: qué propiedad se va a animar (all, transform, background-color, etc.)
+
+transition-duration: duración del efecto (ej: 0.3s)
+
+transition-timing-function: curva de velocidad (ease, linear, etc.)
+
+transition-delay: retardo antes de iniciar
+
+css
+Copiar
+Editar
+button {
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background-color: #0af;
+  transform: scale(1.1);
+}
+🔹 ANIMACIONES (@keyframes + animation)
+Permiten definir cambios personalizados en etapas.
+
+Propiedades CSS:
+animation-name
+
+animation-duration
+
+animation-timing-function
+
+animation-delay
+
+animation-iteration-count
+
+animation-direction
+
+animation-fill-mode
+
+animation-play-state
+
+Valores importantes:
+infinite, alternate, paused, running, ease-in, ease-out, both, etc.
+
+🔹 PROPIEDADES QUE SE PUEDEN ANIMAR
+🔸 Posición y transformación
+transform: (translate, rotate, scale, skew)
+
+top, left, right, bottom
+
+margin, padding
+
+css
+Copiar
+Editar
+transform: rotate(360deg);
+transform: scale(1.2);
+transform: translateY(-10px);
+🔸 Tamaño
+width, height
+
+max-width, max-height
+
+min-width, min-height
+
+🔸 Colores y fondos
+color
+
+background-color
+
+border-color
+
+box-shadow
+
+text-shadow
+
+🔸 Opacidad y visibilidad
+opacity
+
+visibility
+
+css
+Copiar
+Editar
+.fade {
+  transition: opacity 0.5s;
+}
+.fade:hover {
+  opacity: 0;
+}
+🔸 Bordes
+border-width
+
+border-radius
+
+outline
+
+css
+Copiar
+Editar
+border-radius: 50%; /* animar de cuadrado a círculo */
+🔸 Otros efectos útiles
+filter: (blur, brightness, contrast, etc.)
+
+clip-path: (formas recortadas)
+
+z-index (aunque su efecto es discreto)
+
+css
+Copiar
+Editar
+filter: blur(5px);
+clip-path: circle(50%);
+🔹 COMBINACIONES PODEROSAS
+Animación con escala y opacidad
+css
+Copiar
+Editar
+@keyframes zoomFade {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.element {
+  animation: zoomFade 1s ease-out forwards;
+}
+Movimiento continuo
+css
+Copiar
+Editar
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(300px); }
+}
+.box {
+  animation: slide 2s linear infinite;
+}
+Girar un elemento infinitamente
+css
+Copiar
+Editar
+@keyframes girar {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.spinner {
+  animation: girar 1s linear infinite;
+}
+¿Quieres que te cree una galería de ejemplos en una sola página web interactiva con estas animaciones? Podría hacer una tipo "showroom" para que veas y modifiques cada una. ¿Te interesa?
+
+
+
+
+
+
+
+
+
+
+Herramientas
+
+
+
+ChatGPT puede 
